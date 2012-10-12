@@ -1,0 +1,7 @@
+---
+:orm: ohm
+:test: minitest
+:mock: none
+:script: jquery
+:renderer: haml
+:stylesheet: less
