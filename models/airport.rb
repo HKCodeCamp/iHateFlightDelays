@@ -16,7 +16,7 @@ class Airport < Ohm::Model
 
 	attribute :name
 	attribute :airport_code
-  attribute :latitude, Type::FLoat  # how to code them in geohash
+  attribute :latitude, Type::Float  # how to code them in geohash
   attribute :longitude, Type::Float
   
   
