@@ -9,11 +9,13 @@ gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 
 # Component requirements
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'therubyracer'
 gem 'rack-less'
 gem 'less'
 gem 'haml'
-gem 'ohm-contrib', :require => "ohm/contrib"
 gem 'ohm', :require => "ohm"
+gem 'ohm-contrib', :require => "ohm/contrib"
 gem 'json'
 
 # Test requirements
