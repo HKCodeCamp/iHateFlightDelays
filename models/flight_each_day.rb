@@ -22,6 +22,7 @@ class FlightEachDay < Ohm::Model
 	
 	reference :flight, :Flight
   set :passengers, :Account  # after authentication
+  list :complaints, :Complaints
   
   # unique for composite key that flight_id+each_day
   # flight_id::each_day

@@ -26,7 +26,6 @@ class Complaints < Ohm::Model
   def author
   	@_memo[:author] ||= Account[author_id]
   end
-
  
 #overridden public method  
   def author_id=(author_id)

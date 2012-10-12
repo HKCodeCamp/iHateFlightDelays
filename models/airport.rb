@@ -1,5 +1,4 @@
 class Airport < Ohm::Model
-  include Ohm::Timestamps
   include Ohm::DataTypes
 
   # Examples:
@@ -17,7 +16,8 @@ class Airport < Ohm::Model
 
 	attribute :name
 	attribute :airport_code
-  attribute :position  # how to code them in geohash
+  attribute :latitude, Type::FLoat  # how to code them in geohash
+  attribute :longitude, Type::Float
   
   
   

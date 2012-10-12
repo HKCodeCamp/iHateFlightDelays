@@ -1,5 +1,4 @@
 class Airline < Ohm::Model
-  include Ohm::DataTypes
 
   # Examples:
   # attribute :name

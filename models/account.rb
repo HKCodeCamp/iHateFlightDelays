@@ -21,9 +21,13 @@ class Account < Ohm::Model
   attribute :email
   attribute :provider
   attribute :uid, Type::Integer  
+  attribute :checkin_time, Type::Hash
+  attribute :boarding_time, Type::Hash
+  attribute :takeoff_time, Type::Hash
+  attribute :landing_time, Type::Hash
   
   # relationships
-  
+  list :flights, :FlightEachDay
   
   def validate
     assert_present :username

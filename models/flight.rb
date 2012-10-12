@@ -1,5 +1,4 @@
 class Flight < Ohm::Model
-  include Ohm::Timestamps
   include Ohm::DataTypes
 
   # Examples:
