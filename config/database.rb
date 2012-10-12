@@ -16,6 +16,7 @@
 # namespaces from testing
 case Padrino.env
   when :development then Ohm.connect(:host => "ec2-46-137-238-45.ap-southeast-1.compute.amazonaws.com", :port => 6379, :db => 8)
-  when :test then Ohm.connect(:host => "ec2-46-137-238-45.ap-southeast-1.compute.amazonaws.com", :port => 6379, :db => 9)
+  #when :test then Ohm.connect(:host => "ec2-46-137-238-45.ap-southeast-1.compute.amazonaws.com", :port => 6379, :db => 9)
   when :production then Ohm.connect(:host => "ec2-46-137-238-45.ap-southeast-1.compute.amazonaws.com", :port => 6379, :db => 10)
+  when :test then Ohm.connect(:host => "127.0.0.1", :port => 6379,:db => 9)
 end
