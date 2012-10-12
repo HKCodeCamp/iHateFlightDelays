@@ -24,7 +24,7 @@ class Flight < Ohm::Model
   attribute :takeoff_time, Type::Time
   attribute :landing_time, Type::Time
   
-  collection flights, FlightEachDay
+  collection :flights, :FlightEachDay
   
   
   def airline=(airline)
@@ -40,7 +40,7 @@ class Flight < Ohm::Model
 	end
 	
 	def departure_airport
-		@_memo(:departure_airport) ||= Airport(departure_airport_id)
+		@_memo[:departure_airport] ||= Airport(departure_airport_id)
 	end
 	
 	def arrival_airport=(airport)
@@ -48,7 +48,7 @@ class Flight < Ohm::Model
 	end
 	
 	def arrival_airport
-		@_memo(:arrival_airport) ||= Airport(arrival_airport_id)
+		@_memo[:arrival_airport] ||= Airport(arrival_airport_id)
 	end
  
 #overridden public method  

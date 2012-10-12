@@ -20,8 +20,8 @@ class FlightEachDay < Ohm::Model
 	attribute :takeoff_time, Type::Time
 	attribute :landing_time, Type::Time
 	
-	reference :flight, Flight
-  set :passengers, Account  # after authentication
+	reference :flight, :Flight
+  set :passengers, :Account  # after authentication
   
   # unique for composite key that flight_id+each_day
   # flight_id::each_day
