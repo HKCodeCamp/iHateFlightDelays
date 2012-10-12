@@ -14,8 +14,8 @@
 # Alternatively, you can try specifying a difference :db
 # which, outside of confirmation, appears to provide distinct
 # namespaces from testing
-# case Padrino.env
-#  when :development then Ohm.connect(:db => 0)
-#  when :production then Ohm.connect(:db => 1)
-#  when :test then Ohm.connect(:db => 2)
-# end
+case Padrino.env
+  when :development then Ohm.connect(:host => "ec2-46-137-238-45.ap-southeast-1.compute.amazonaws.com", :port => 6379, :db => 8)
+  when :test then Ohm.connect(:host => "ec2-46-137-238-45.ap-southeast-1.compute.amazonaws.com", :port => 6379, :db => 9)
+  when :production then Ohm.connect(:host => "ec2-46-137-238-45.ap-southeast-1.compute.amazonaws.com", :port => 6379, :db => 10)
+end
