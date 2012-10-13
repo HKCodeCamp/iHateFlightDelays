@@ -29,6 +29,8 @@ class Account < Ohm::Model
   # relationships
   list :flights, :FlightEachDay
   
+  unique :username
+  
   def validate
     assert_present :username
     assert_present :password_hash
@@ -44,8 +46,9 @@ class Account < Ohm::Model
     self.password_hash = @_memo[:password]
   end
   
-  
-  
-  
-  
+  def self.authenticate(username, password)
+    u = self.with(:username, username)
+    return false until u
+   	u.password == password ? true : false  	
+  end  
 end
