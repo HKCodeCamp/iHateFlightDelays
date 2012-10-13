@@ -18,9 +18,10 @@ IHateFlightDelays.controllers :account do
   #   "Hello world!"
   # end
   
-  put :register do
+  get :signup do
   	logger.info(params)
-  	
+  	JSON.dump(params)
+  	render :home
   end
 
   
