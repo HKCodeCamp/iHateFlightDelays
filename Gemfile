@@ -3,6 +3,7 @@ source :rubygems
 # Server requirements
 # gem 'thin' # or mongrel
 # gem 'trinidad', :platform => 'jruby'
+gem 'unicorn'
 
 # Project requirements
 gem 'rake'

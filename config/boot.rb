@@ -34,7 +34,8 @@ Bundler.require(:default, PADRINO_ENV)
 # Add your before (RE)load hooks here
 #
 Padrino.before_load do
-	APP_CONFIG = YAML.load_file("#{Padrino.root}/config/database.yml")[Padrino.env.to_s]
+  APP_CONFIG = YAML.load(ERB.new(File.read("#{Padrino.root}/config/database.yml")).result)[Padrino.env.to_s]
+	#APP_CONFIG = YAML.load_file("#{Padrino.root}/config/database.yml")[Padrino.env.to_s]
   uri = URI.parse(APP_CONFIG["redis_server"])
   
   case Padrino.env
