@@ -18,10 +18,12 @@ IHateFlightDelays.controllers :account do
   #   "Hello world!"
   # end
   
-  get :signup do
+  post :signup do
   	logger.info(params)
-  	JSON.dump(params)
-  	render :home
+  	JSON.dump({:item => {:username => params["username"], :status => :success}})
+  	
+  	
+  	#account = Account.new(params)  	
   end
 
   
