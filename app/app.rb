@@ -57,4 +57,7 @@ class IHateFlightDelays < Padrino::Application
   #     render 'errors/505'
   #   end
   #
+  get :index do		
+		render :home
+	end
 end

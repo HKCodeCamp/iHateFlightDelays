@@ -34,6 +34,17 @@ Bundler.require(:default, PADRINO_ENV)
 # Add your before (RE)load hooks here
 #
 Padrino.before_load do
+	APP_CONFIG = YAML.load_file("#{Padrino.root}/config/database.yml")[Padrino.env.to_s]
+  uri = URI.parse(APP_CONFIG["redis_server"])
+  
+  case Padrino.env
+  when :development 
+    Ohm.connect(:host => uri.host, :port => uri.port, :db => uri.path.split('/')[1].to_i)
+  when :test
+    Ohm.connect(:host => uri.host, :port => uri.port, :db => uri.path.split('/')[1].to_i)
+  when :production
+    Ohm.connect(:host => uri.host, :port => uri.port, :password => uri.password)
+  end
 end
 
 ##

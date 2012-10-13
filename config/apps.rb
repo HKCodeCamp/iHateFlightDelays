@@ -32,3 +32,8 @@ end
 
 # Mounts the core application for this project
 Padrino.mount("IHateFlightDelays").to('/')
+# admin does not support ohm now, let me do it later on and give community back
+# Padrino.mount("Admin").to('/admin')
+
+# handle it later on 
+# Padrino.use(Padrino::Localization::Middleware, %w(en zh))
