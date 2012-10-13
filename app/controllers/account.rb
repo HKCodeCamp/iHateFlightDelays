@@ -20,10 +20,14 @@ IHateFlightDelays.controllers :account do
   
   post :signup do
   	logger.info(params)
-  	JSON.dump({:item => {:username => params["username"], :status => :success}})
+  	params.delete("password1")
+  	password = params.delete("password")
+  	account = Account.new(params)
+  	account.password = password
+  	account.save
+  	JSON.dump({:item => {:username => params["username"], :status => :success}}) 	
   	
-  	
-  	#account = Account.new(params)  	
+  	  	
   end
 
   

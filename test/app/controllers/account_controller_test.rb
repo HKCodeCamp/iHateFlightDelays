@@ -6,6 +6,7 @@ describe "AccountController" do
   end
 
   it "should return hello world text" do
+    
     assert_equal "Hello World", last_response.body
   end
 end
